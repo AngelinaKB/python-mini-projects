@@ -1,0 +1,31 @@
+import random 
+
+answer = random.randint(1, 100)
+guesses = 0
+is_running = True
+
+print("Python Number Guessing Game~")
+print("Select a number between 1 - 100.")
+
+while is_running:
+        guess = input("Enter your guess: ")
+        
+        if guess.isdigit():
+                guess = int(guess)
+                guesses += 1
+                if guess< 1 or guess > 100:
+                        print("That number is out of range!")
+                        print("Please select a number between 1 - 100.")
+                elif guess < answer:
+                        print("Too low! Try again!")
+                elif guess > answer:
+                        print("Too high! Try again!")
+                else:
+                        print()
+                        print(f"Correct! The answer was {answer}!")
+                        print(f"Number of guesses: {guesses}")
+                        is_running = False
+        else:
+                print("Invalid guess!")
+                print("Please select a number between 1 - 100.")
+                
